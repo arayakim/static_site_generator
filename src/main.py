@@ -1,6 +1,7 @@
 import os
 import shutil
 from generate_pages_recursive import generate_pages_recursive
+import sys
 
 
 def copy_directory(source, destination):
@@ -24,11 +25,14 @@ def copy_directory(source, destination):
 
 
 def main():
-    copy_directory("static", "public")
+    basepath = sys.argv[1] if len(sys.argv) > 1 else "/"
+
+    copy_directory("static", "docs")
     generate_pages_recursive(
         "content",
         "template.html",
-        "public"
+        "docs",
+        basepath
     )
 
 main()
