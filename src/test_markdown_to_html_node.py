@@ -1,4 +1,3 @@
-
 import unittest
 
 from markdown_to_html_node import markdown_to_html_node
@@ -76,7 +75,6 @@ the **same** even with inline stuff
             node.to_html(),
             "<div><ol><li>First item</li><li>Second item</li><li>Third item</li></ol></div>"
         )
-
 
 if __name__ == "__main__":
     unittest.main()
