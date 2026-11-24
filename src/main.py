@@ -1,5 +1,6 @@
 import os
 import shutil
+from generate_page import generate_page
 
 
 def copy_directory(source, destination):
@@ -24,5 +25,10 @@ def copy_directory(source, destination):
 
 def main():
     copy_directory("static", "public")
+    generate_page(
+        "content/index.md",
+        "template.html",
+        "public/index.html"
+    )
 
 main()
